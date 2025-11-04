@@ -1,16 +1,22 @@
 export function add(numbers) {
-  return {/*write code here*/}
+  return numbers.reduce((sum, num) => sum + num, 0);
 }
 
 export function subtract(numbers) {
-  return {/*write code here*/}
+  return numbers.slice(1).reduce((diff, num) => diff - num, numbers[0]);
 }
 
 export function multiply(numbers) {
-  return {/*write code here*/}
+  return numbers.reduce((product, num) => product * num, 1);
 }
 
 export function divide(numbers) {
-  return {/*write code here*/}
+  let res = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] === 0) 
+      return NaN;
+    res /= numbers[i];
+  }
+  return res;
 }
 
